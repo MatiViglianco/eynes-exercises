@@ -19,3 +19,16 @@ class Circle():
     def get_area(self):
         area = math.pi * (self.radius ** 2)
         return area
+    
+    def get_perimeter(self):
+        perimeter = math.pi * (self.radius * 2)
+        return perimeter
+    
+    def __mul__(self, n):
+        if n > 0:
+            return Circle(self.radius * n)
+        else:
+            raise ValueError("El radio no puede ser menor o igual a 0.")
+    
+    def __str__(self):
+        return f"EL círculo tiene un radio de {self.radius} unidades."
